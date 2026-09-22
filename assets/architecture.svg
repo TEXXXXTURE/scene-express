@@ -1,0 +1,128 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scene Express 架构图">
+  <defs>
+    <radialGradient id="bgPaper" cx="50%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#FBF4E6"/>
+      <stop offset="100%" stop-color="#EDE0C6"/>
+    </radialGradient>
+    <filter id="paperTex" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.08" numOctaves="4" seed="9" result="n"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.33  0 0 0 0 0.20  0 0 0 0.06 0" in="n" result="t"/>
+      <feBlend in="SourceGraphic" in2="t" mode="multiply"/>
+    </filter>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5C3A21"/>
+      <stop offset="100%" stop-color="#2E1C10"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7B1E"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF3E2"/>
+      <stop offset="100%" stop-color="#EFE0C2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bgPaper)" filter="url(#paperTex)"/>
+
+  <!-- 标题 -->
+  <text x="600" y="52" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="30" font-weight="bold" fill="#3E2717" letter-spacing="6">架构 · Architecture</text>
+  <rect x="480" y="66" width="240" height="2.5" fill="url(#gold)"/>
+
+  <!-- ══════════ 左：路由循环 ══════════ -->
+  <text x="80" y="108" font-family="'Noto Serif SC', 'SimSun', serif" font-size="18" font-weight="bold" fill="#3E2717" letter-spacing="2">路由循环</text>
+
+  <!-- 节点1 写作任务 -->
+  <rect x="100" y="124" width="400" height="44" rx="10" fill="url(#card)" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="300" y="151" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="16" fill="#2E1C10">写作任务</text>
+
+  <path d="M300 168 L300 190" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M293 186 L300 197 L307 186" fill="#8B5E3C"/>
+
+  <!-- 节点2 场景判定 -->
+  <rect x="100" y="199" width="400" height="44" rx="10" fill="url(#card)" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="300" y="226" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="16" fill="#2E1C10">场景判定 · 载体 × 对象 × 目的</text>
+
+  <path d="M300 243 L300 265" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M293 261 L300 272 L307 261" fill="#8B5E3C"/>
+
+  <!-- 节点3 查路由 -->
+  <rect x="100" y="274" width="400" height="44" rx="10" fill="url(#card)" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="300" y="301" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="16" fill="#2E1C10">查 ROUTE.md</text>
+
+  <path d="M300 318 L300 340" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M293 336 L300 347 L307 336" fill="#8B5E3C"/>
+
+  <!-- 节点4 菱形判断 -->
+  <path d="M300 352 L390 392 L300 432 L210 392 Z" fill="#F3E6CB" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="300" y="389" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="15" fill="#2E1C10">命中？</text>
+  <text x="300" y="406" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="11" fill="#6F4E37">命中 / 未命中</text>
+
+  <!-- 命中分支（右） -->
+  <path d="M390 392 L440 392" stroke="#5C7A3C" stroke-width="2.2" fill="none"/>
+  <path d="M436 385 L447 392 L436 399" fill="#5C7A3C"/>
+  <text x="400" y="382" font-family="'Noto Serif SC', 'SimSun', serif" font-size="12" fill="#5C7A3C">命中</text>
+  <rect x="447" y="362" width="228" height="60" rx="10" fill="#F1E8CE" stroke="#5C7A3C" stroke-width="1.6"/>
+  <text x="561" y="386" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="14" fill="#2E1C10">读模块卡 · 进入人设</text>
+  <text x="561" y="407" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="11.5" fill="#6F4E37">引导 → 档位 → 锚点 → 兜底</text>
+
+  <!-- 未命中分支（下） -->
+  <path d="M300 432 L300 456" stroke="#B04A38" stroke-width="2.2" fill="none"/>
+  <path d="M293 452 L300 463 L307 452" fill="#B04A38"/>
+  <text x="312" y="450" font-family="'Noto Serif SC', 'SimSun', serif" font-size="12" fill="#B04A38">未命中</text>
+  <rect x="210" y="465" width="180" height="40" rx="10" fill="#F1E8CE" stroke="#B04A38" stroke-width="1.6"/>
+  <text x="300" y="490" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="14" fill="#2E1C10">00-default 兜底</text>
+
+  <!-- 汇合 -->
+  <path d="M561 422 L561 508 L360 508" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M300 505 L300 508" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M360 508 L360 518" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M353 514 L360 525 L367 514" fill="#8B5E3C"/>
+
+  <!-- 节点5 打分自检 -->
+  <rect x="180" y="527" width="360" height="44" rx="10" fill="url(#card)" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="360" y="554" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="16" fill="#2E1C10">打分自检（保真 / 规则 / 漂移）</text>
+
+  <path d="M360 571 L360 592" stroke="#8B5E3C" stroke-width="2.2" fill="none"/>
+  <path d="M353 588 L360 599 L367 588" fill="#8B5E3C"/>
+
+  <!-- 节点6 达标/重写 -->
+  <rect x="100" y="601" width="520" height="30" rx="9" fill="url(#card)" stroke="url(#ink)" stroke-width="1.8"/>
+  <text x="180" y="621" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="14.5" fill="#5C7A3C">达标 → 交付</text>
+  <line x1="360" y1="606" x2="360" y2="626" stroke="#C8B08A" stroke-width="1.4"/>
+  <text x="545" y="621" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="14.5" fill="#B04A38">超阈值 → 回喂重写（预算 2 次）</text>
+
+  <!-- ══════════ 右：洋葱分层 ══════════ -->
+  <text x="790" y="108" font-family="'Noto Serif SC', 'SimSun', serif" font-size="18" font-weight="bold" fill="#3E2717" letter-spacing="2">档位分层 · 洋葱模型</text>
+
+  <g transform="translate(790, 330)">
+    <!-- L2 外环 -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#8B5E3C" stroke-width="2.2" stroke-dasharray="8 6"/>
+    <!-- L1 中环 -->
+    <circle cx="0" cy="0" r="118" fill="#EFE0C2" stroke="#6F4E37" stroke-width="2"/>
+    <!-- L0 内环 -->
+    <circle cx="0" cy="0" r="58" fill="#8B5E3C" stroke="#5C3A21" stroke-width="2"/>
+
+    <!-- L0 标签 -->
+    <text x="0" y="-8" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="14" font-weight="bold" fill="#FBF4E6">L0</text>
+    <text x="0" y="14" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="11" fill="#FBF4E6">通用档位</text>
+    <text x="0" y="30" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10" fill="#E9D9BA">00-default</text>
+
+    <!-- L1 标签 -->
+    <text x="0" y="-136" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="13" font-weight="bold" fill="#3E2717">L1 场景卡</text>
+    <text x="-90" y="96" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10.5" fill="#6F4E37">01 汇总</text>
+    <text x="90" y="96" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10.5" fill="#6F4E37">02 汇报</text>
+    <text x="-100" y="-40" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10.5" fill="#6F4E37">04 技术</text>
+    <text x="100" y="-40" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10.5" fill="#6F4E37">03 公众号</text>
+
+    <!-- L2 标签 -->
+    <text x="0" y="-194" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="13" font-weight="bold" fill="#5C3A21">L2 职业卡 / 人设闭环</text>
+    <text x="0" y="208" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="10.5" font-style="italic" fill="#8B5E3C">由指标提取器从样例生成，按需组装 · 不内置</text>
+  </g>
+
+  <!-- 右下图注 -->
+  <text x="790" y="594" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', serif" font-size="12.5" fill="#6F4E37">路由由内向外优先命中；未命中逐层外扩兜底</text>
+
+  <!-- 底部烫金线 -->
+  <rect x="60" y="622" width="1080" height="2" fill="url(#gold)" opacity="0.4"/>
+</svg>
