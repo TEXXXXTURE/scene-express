@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Scene Express" width="440">
+  <img src="assets/banner.svg" alt="Scene Express" width="100%">
 </p>
 
 <h1 align="center">Scene Express · 场景化表述路由</h1>

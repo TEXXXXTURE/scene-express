@@ -1,67 +1,93 @@
-<svg width="640" height="880" viewBox="0 0 640 880" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scene Express 场景化表述路由">
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scene Express 场景化表述路由">
   <defs>
-    <!-- 背景：暗褐渐变 -->
-    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
-      <stop offset="0%" stop-color="#4A2C17"/>
-      <stop offset="60%" stop-color="#2A1A0E"/>
-      <stop offset="100%" stop-color="#180D08"/>
+    <radialGradient id="bg" cx="42%" cy="38%" r="85%">
+      <stop offset="0%" stop-color="#6B4526"/>
+      <stop offset="55%" stop-color="#4A2F1D"/>
+      <stop offset="100%" stop-color="#241510"/>
     </radialGradient>
-    <filter id="bgTex" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="11" result="n"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.28  0 0 0 0 0.17  0 0 0 0 0.09  0 0 0 0.22 0" in="n" result="t"/>
+    <filter id="leather" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.30  0 0 0 0 0.18  0 0 0 0 0.10  0 0 0 0.30 0" in="noise" result="tint"/>
+      <feBlend in="SourceGraphic" in2="tint" mode="multiply"/>
+    </filter>
+    <filter id="paperTex" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="4" seed="3" result="n"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.42  0 0 0 0 0.28  0 0 0 0.10 0" in="n" result="t"/>
       <feBlend in="SourceGraphic" in2="t" mode="multiply"/>
     </filter>
-    <!-- 封面：牛皮质感 -->
-    <linearGradient id="cover" x1="0" y1="0" x2="0.9" y2="1">
-      <stop offset="0%" stop-color="#7A5230"/>
-      <stop offset="45%" stop-color="#553520"/>
-      <stop offset="100%" stop-color="#2E1C10"/>
-    </linearGradient>
-    <filter id="coverTex" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="23" result="n"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.35  0 0 0 0 0.22  0 0 0 0 0.12  0 0 0 0.35 0" in="n" result="t"/>
-      <feBlend in="SourceGraphic" in2="t" mode="multiply"/>
-    </filter>
-    <!-- 烫金 -->
     <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#D9BE72"/>
-      <stop offset="45%" stop-color="#C9A227"/>
-      <stop offset="100%" stop-color="#8F7220"/>
+      <stop offset="0%" stop-color="#EFD9A0"/>
+      <stop offset="45%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7B1E"/>
+    </linearGradient>
+    <linearGradient id="paperL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E9D9BA"/>
+      <stop offset="100%" stop-color="#F7EEDC"/>
+    </linearGradient>
+    <linearGradient id="paperR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F7EEDC"/>
+      <stop offset="100%" stop-color="#E5D2AF"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A5230"/>
+      <stop offset="100%" stop-color="#3E2717"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B04A38"/>
+      <stop offset="100%" stop-color="#8C3325"/>
     </linearGradient>
   </defs>
 
-  <!-- 背景 -->
-  <rect width="640" height="880" fill="url(#bg)" filter="url(#bgTex)"/>
+  <!-- 皮革背景 -->
+  <rect width="1200" height="300" fill="url(#bg)" filter="url(#leather)"/>
 
-  <!-- 纸页边缘（从封面下沿与右沿露出） -->
-  <rect x="116" y="112" width="412" height="668" rx="10" fill="#E0C9A2"/>
-  <rect x="120" y="108" width="404" height="672" rx="10" fill="#EAD9B4"/>
+  <!-- 顶部烫金细线 -->
+  <rect x="60" y="18" width="1080" height="2" fill="url(#gold)" opacity="0.55"/>
+  <rect x="60" y="280" width="1080" height="2" fill="url(#gold)" opacity="0.55"/>
 
-  <!-- 皮质封面 -->
-  <rect x="120" y="110" width="400" height="660" rx="10" fill="url(#cover)" filter="url(#coverTex)"/>
+  <!-- 左侧：打开的羊皮笔记本 -->
+  <g transform="translate(78, 52)">
+    <!-- 书脊 -->
+    <rect x="118" y="4" width="12" height="192" rx="4" fill="#2E1C10"/>
+    <!-- 左封面内衬 -->
+    <rect x="-6" y="-2" width="130" height="204" rx="10" fill="url(#cover)" opacity="0.9"/>
+    <!-- 右封面内衬 -->
+    <rect x="124" y="-2" width="130" height="204" rx="10" fill="url(#cover)" opacity="0.9"/>
+    <!-- 左纸页 -->
+    <rect x="4" y="6" width="112" height="188" rx="4" fill="url(#paperL)" filter="url(#paperTex)"/>
+    <!-- 右纸页 -->
+    <rect x="132" y="6" width="112" height="188" rx="4" fill="url(#paperR)" filter="url(#paperTex)"/>
+    <!-- 左页横线（手写感） -->
+    <g stroke="#A98B5F" stroke-width="1.4" opacity="0.55">
+      <line x1="16" y1="40" x2="104" y2="40"/>
+      <line x1="16" y1="58" x2="104" y2="58"/>
+      <line x1="16" y1="76" x2="96" y2="76"/>
+      <line x1="16" y1="94" x2="104" y2="94"/>
+      <line x1="16" y1="112" x2="84" y2="112"/>
+    </g>
+    <!-- 左页烫金小字 -->
+    <text x="16" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="url(#gold)" font-style="italic">who is speaking</text>
+    <!-- 右页横线 -->
+    <g stroke="#A98B5F" stroke-width="1.4" opacity="0.55">
+      <line x1="144" y1="40" x2="232" y2="40"/>
+      <line x1="144" y1="58" x2="232" y2="58"/>
+      <line x1="144" y1="76" x2="218" y2="76"/>
+      <line x1="144" y1="94" x2="232" y2="94"/>
+      <line x1="144" y1="112" x2="200" y2="112"/>
+    </g>
+    <!-- 右页烫金小字 -->
+    <text x="144" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="url(#gold)" font-style="italic">how to speak</text>
+    <!-- 书签带（右页外侧，避开文字） -->
+    <path d="M204 6 L204 150 L212 138 L220 150 L220 6 Z" fill="url(#ribbon)"/>
+  </g>
 
-  <!-- 书脊：左侧深色装订区 -->
-  <rect x="120" y="110" width="22" height="660" rx="10" fill="#2A1810" opacity="0.75"/>
-  <!-- 装订缝线（手账线迹感） -->
-  <line x1="138" y1="140" x2="138" y2="740" stroke="#1C0F09" stroke-width="1.6" stroke-dasharray="7 7" opacity="0.6"/>
-  <!-- 封面右侧微高光（皮质光泽） -->
-  <rect x="470" y="110" width="50" height="660" fill="#000000" opacity="0.12"/>
-
-  <!-- 封面边缘磨损高光 -->
-  <rect x="122" y="112" width="396" height="3" rx="1.5" fill="#A9845C" opacity="0.25"/>
-
-  <!-- 压印细金线框 -->
-  <rect x="156" y="150" width="328" height="580" rx="6" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity="0.4"/>
-  <rect x="166" y="160" width="308" height="560" rx="4" fill="none" stroke="url(#gold)" stroke-width="0.8" opacity="0.22"/>
-
-  <!-- 封面烫印文字 -->
-  <text x="320" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', 'Noto Serif SC', 'SimSun', serif" font-size="46" font-weight="bold" fill="url(#gold)" letter-spacing="1">Scene Express</text>
-  <text x="320" y="380" text-anchor="middle" font-family="'Noto Serif SC', 'SimSun', 'Songti SC', serif" font-size="22" fill="#D9C3A0" letter-spacing="8">场景化表述路由</text>
-
-  <!-- 底部小字 -->
-  <text x="320" y="660" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#9C7F58" letter-spacing="2">SCENE ROUTER · PERSONA CARDS</text>
-  <text x="320" y="682" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#9C7F58" letter-spacing="2">METRIC EXTRACTOR</text>
-
-  <!-- 底部纸页露出处阴影 -->
-  <rect x="120" y="764" width="400" height="6" fill="#000000" opacity="0.18"/>
+  <!-- 右侧：标题区 -->
+  <g transform="translate(360, 78)">
+    <text x="0" y="58" font-family="Georgia, 'Times New Roman', 'Noto Serif SC', 'SimSun', serif" font-size="58" font-weight="bold" fill="url(#gold)" letter-spacing="1">Scene Express</text>
+    <text x="2" y="108" font-family="'Noto Serif SC', 'SimSun', 'Songti SC', serif" font-size="26" fill="#E9D9BA" letter-spacing="4">场景化表述路由 · 一本羊皮人设笔记本</text>
+    <text x="2" y="158" font-family="'Noto Serif SC', 'SimSun', 'Songti SC', serif" font-size="17" font-style="italic" fill="#C8A98A" letter-spacing="1">限制是写不完的，引导比限制更有效。</text>
+    <!-- 烫金分隔线 -->
+    <rect x="0" y="178" width="430" height="1.5" fill="url(#gold)" opacity="0.5"/>
+    <text x="2" y="208" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#B3946B" letter-spacing="1">SCENE ROUTER · PERSONA CARDS · METRIC EXTRACTOR</text>
+  </g>
 </svg>
