@@ -2,7 +2,7 @@
   <img src="assets/banner.svg" alt="Scene Express" width="100%">
 </p>
 
-<h1 align="center">Scene Express · 场景化表述路由</h1>
+<h1 align="center">Scene Express · 场景化表述</h1>
 
 <p align="center">
   一本「羊皮人设笔记本」：按场景给 AI 一页人设，让它在对的场合，说对的话。<br>
